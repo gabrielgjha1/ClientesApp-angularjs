@@ -10,7 +10,7 @@ angular.
           template: '<create-client></create-client>'
         
         }).
-        when('/updateClient', {
+        when('/updateClient/:id', {
           template: '<update-client></update-client>'
         }).
         otherwise('/showClient');
