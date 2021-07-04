@@ -25,20 +25,43 @@ component('showClient', {
     self.eliminar = function(id) {
 
 
-      $http({
-        method: 'DELETE',
-        url: `http://127.0.0.1:8081/api/clientes/${id}`
-      }).then(function successCallback(response) {
-          
-          console.log(response);
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          console.log('xd');
+          $http({
+            method: 'DELETE',
+            url: `http://127.0.0.1:8081/api/clientes/${id}`
+          }).then(function successCallback(response) {
+              
+              console.log(response);
+    
+              self.GetData();
 
-          self.GetData();
+              Swal.fire(
+                'Deleted!',
+                'Your file has been deleted.',
+                'success'
+              )
+    
+            }, function errorCallback(response) {
+    
+              console.log(response);
+    
+            });
 
-        }, function errorCallback(response) {
+        
+        }
+      })
 
-          console.log(response);
-
-        });
+     
 
     }
 

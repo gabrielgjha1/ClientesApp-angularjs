@@ -8,7 +8,8 @@ angular.module('AccountsApp', [
     'createClient',
     'showClient',
     'headerComponent',
-    'updateClient'
+    'updateClient',
+
 
 
 ])

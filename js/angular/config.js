@@ -12,7 +12,6 @@ angular.
         }).
         when('/updateClient', {
           template: '<update-client></update-client>'
-        
         }).
         otherwise('/showClient');
     }
