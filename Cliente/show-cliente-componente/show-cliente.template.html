@@ -1,1 +1,38 @@
-Show Client
+<h1 >
+
+    Mostrar Clientes
+
+</h1>
+<hr>
+
+<section>
+
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th class="text-center"  scope="col">#</th>
+            <th class="text-center" scope="col">Nombre</th>
+            <th class="text-center" scope="col">Apellido</th>
+            <th class="text-center" scope="col">Email</th>
+            <th class="text-center" scope="col">Acción</th>
+
+          </tr>
+        </thead>
+        <tbody >
+          <tr ng-repeat="(key, value) in $ctrl.cliente">
+            <th class="text-center" scope="row">{{key +1}}</th>
+            <td class="text-center">{{value.nombre}}</td>
+            <td class="text-center">{{value.apellido}}</td>
+            <td class="text-center">{{value.email}}</td>
+            <td class="text-center">
+
+                <button class="btn btn-danger" ng-click="$ctrl.eliminar(value.id)" type="submit"><i class="fas fa-user-minus"></i></button>
+                <button class="btn btn-primary" type="submit"><i class="fas fa-edit"></i></button>
+            
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+</section>
+
